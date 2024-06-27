@@ -30,6 +30,6 @@
     </a>
 
 <a class="transition-all duration-200 ease-in-out bg-bottom bg-no-repeat bg-no-underline-size hover:bg-underline-size  bg-underline text-hex-ff9500 dark:text-hex-ff9f0a" after="content-↗" href="javascript:(function() {   var url = window.location.href.split(&quot;%3F&quot;)[0];   var filename = url.split(&quot;%2F&quot;)[url.split(&quot;%2F&quot;).length - 1];   var id = filename.split(&quot;_&quot;)[1];   if (!id) {     alert(&quot;You can only download SVG icon while viewing an icon.&quot;);     return;   }   var onlyName = filename.split(&quot;_&quot;)[0];    function downloadURI(uri, name) {     var link = document.createElement(&quot;a&quot;);     link.setAttribute(&quot;download&quot;, name);     link.href = uri;     document.body.appendChild(link);     link.dispatchEvent(new MouseEvent('click'));     link.remove();   }    var loggedin = document.getElementById(&quot;gr_connected&quot;);   if (!loggedin) {     alert(&quot;Please LOGIN before clicking on me.&quot;);     return;   }    fetch(&quot;https%3A%2F%2Fwww.flaticon.com%2Feditor%2Ficon%2Fsvg%2F&quot; + id + &quot;%3Ftype%3Dstandard&quot;)     .then(function(response) {       return response.json();     })     .then((data) => {       downloadURI(data.url, onlyName + &quot;.svg&quot;);     })     .catch((error) => {       alert(&quot;Something went wrong&quot;);     }); })();" target="_blank" rel="noopener noreferrer">
-	button class="button button1">Tải SVG</button>
+	<button class="button button1">Tải SVG</button>
   </body>
 </html>
